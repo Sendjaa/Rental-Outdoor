@@ -32,7 +32,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(74, 124, 89, 0.9);
+  background: rgba(74, 124, 89, 0.548);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
@@ -67,7 +67,7 @@
 
 .price {
   font-size: 1.4rem;
-  font-weight: bold;
+  font-weight: bolder;
   color: var(  --dl-color-theme-neutral-dark);
 }
 
@@ -169,6 +169,58 @@
 .add-to-cart-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(88, 64, 12, 0.3);
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    margin-bottom: 0;
+  }
+
+  .product-info {
+    padding: 0.5rem;  
+  }
+  
+  .product-name {
+    font-size:16px;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+  .price-unit{
+    font-size: 0.8rem;
+  }
+
+  .price-section {
+    flex-direction: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-top: -5px;
+  }
+  .rental-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .control-group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .checkout-btn{
+    font-size: 12px;
+    padding: 0.5rem;
+    width: 40%;
+  }
+  .add-to-booking-btn {
+    font-size: 14px;
+    padding: 0.5rem;
+    width: 40%;
+  }
+  .add-to-cart-btn {
+    font-size: 12px;
+    padding: 0.5rem;
+    width: 60%;
+  }
+
 }
 
 @media (max-width: 480px) {

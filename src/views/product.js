@@ -6,13 +6,16 @@ import { useState } from "react"
 import ProductCatalog from "../components/ProductCatalog"
 import Cart from "../components/Cart"
 import BookingForm from "../components/BookingForm"
-import "./product.css" // Anda bisa buat file CSS ini untuk styling tambahan
+import "./product.css"
 import Navbar8 from "../components/navbar8"
+import ProductCard from "../components/ProductCard"
+import Detail from "../components/productDetail"
 
-export default function Product() {
+export default function Product() { 
      const [cartItems, setCartItems] = useState([])
      const [isCartOpen, setIsCartOpen] = useState(false)
      const [isBookingFormOpen, setIsBookingFormOpen] = useState(false)
+     const [SelectProduct, setSelectProduct] = useState(null)
 
      const handleAddToCart = (product, quantity, days) => {
          setCartItems((prevItems) => {
@@ -27,8 +30,18 @@ export default function Product() {
               return [...prevItems, { ...product, quantity, days }]
             }
          })
-         setIsCartOpen(true) // Buka keranjang setelah menambahkan produk
+         setIsCartOpen(true)
      }
+
+    if (SelectProduct) {
+        return (
+          <div>
+            <Detail productId={SelectProduct.id.toString()} product={SelectProduct} onAddToCart={handleAddToCart} onSelectProduct={setSelectProduct} />
+          </div>
+        )
+    }
+ 
+
 
      const handleUpdateItem = (id, newQuantity, newDays) => {
          if (newQuantity < 1) newQuantity = 1
@@ -53,7 +66,7 @@ export default function Product() {
      const handleBookingSubmit = (bookingData) => {
          console.log("Booking Dikonfirmasi:", bookingData)
          alert("Booking Anda telah dikonfirmasi! Cek console untuk detail.")
-         setCartItems([]) // Kosongkan keranjang setelah booking berhasil
+         setCartItems([])
          setIsBookingFormOpen(false)
      }
 
@@ -72,7 +85,7 @@ export default function Product() {
               </div>
             <Navbar8/>
 
-            <ProductCatalog onAddToCart={handleAddToCart} />
+            <ProductCatalog onAddToCart={handleAddToCart}  onSelectProduct={setSelectProduct}/>
 
             {isCartOpen && (
               <Cart
