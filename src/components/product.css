@@ -1,182 +1,177 @@
+/*
+ * General Styles
+ * A modern, sans-serif font is used for a clean look.
+ */
 body {
-          font-family: sans-serif;
-          -webkit-font-smoothing: antialiased;
-          color: #111827;
-        }
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #111827;
+}
 
-        .container {
-          width: 100%;
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-          .container {
-            padding: 2rem;
-          }
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-          .main-heading {
-            font-size: 24px;
-          }
+/*
+ * Header Section
+ * Centered text for the main and subheadings.
+ */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-          .sub-heading {
-            font-size: 12px;
-            line-height: 75px;
-            letter-spacing: 0.1px;
-            font-weight: 400;
-            margin-top: 10px;
-          }
+.main-heading {
+  font-size: 2.25rem; /* ~36px */
+  font-family: 'STIX Two Text', serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
 
-          .category-btn{  
-            font-size: 14px;
-            padding: 10px 20px;
-          }
+.sub-heading {
+  font-size: 0.875rem; /* ~14px */
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5;
+}
 
-          .rent-button {
-            display  : none;
-          }
-          .product-title{
-            font-size: 18px;
-          }
-          .product-price{
-            font-size:18px;
-          }
-        }
-        
-        @media (min-width: 768px) {
-          .container {
-            padding: 3rem;
-          }
-        }
-        
-        .header-section {
-          text-align: center;
-          margin-bottom: 3rem;
-        }
-        
-        .main-heading {
-          font-size: 48px;
-          font-family: STIX Two Text;
-          font-weight: 700;
-          line-height: 1.5;
-        }
-        
-        .sub-heading {
-         font-size: 16px;
-          font-family: Noto Sans;
-          line-height: 1.5;
-        }
-        
-        .product-grid {
-          display: grid;
-          grid-template-columns: repeat(1, minmax(0, 1fr));
-          gap: 2rem;
-        }
-        
-        /* Tablet breakpoint */
-        /* Mobile: 2 columns */
-        .product-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+/*
+ * Product Grid
+ * This is the core of the layout. We use a responsive grid to handle different screen sizes.
+ * On mobile, it's a two-column grid.
+ * On larger screens (md), it becomes a three-column grid.
+ * On very large screens (xl), it's a four-column grid.
+ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns on mobile */
+  gap: 1.5rem; /* Reduced gap for mobile */
+}
 
-            @media (min-width: 640px) {
-          .rent-button {
-            width: auto;
-            font-size: 16px;
-            margin-top: 0;
-            display: inline-block;
-          }
-          .product-title  {
-            font-size: 18px;
-          }
-          .product-description{
-           font-size: 12px;
-          }
-          .product-price{
-            font-size: 18px;
-          }
-        }
-        
-        /* Desktop: even bigger font and padding */
-        @media (min-width: 1024px) {
-          .rent-button {
-            font-size: 1rem;
-            padding: 0.75rem 1rem;
-          }
-        }
-        
-        
-        /* Large desktop breakpoint */
-        @media (min-width: 1280px) {
-          .product-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-          }
-        }
-        
-        .product-card {
-          background-color: white;
-          border-radius: 0.5rem;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: transform 0.3s ease;
-        }
+/* Tablet breakpoint - 3 columns */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
-        .product-image {
-          width: 100%;
-          height: 14rem;
-          object-fit: cover;
-          transform: scale(1);
-          transition: transform 0.3s ease;
-        }
-        
-        .product-card:hover .product-image {
-          transform: scale(1.05);
-        }
-        
-        .p-6 {
-          padding: 1.5rem;
-        }
-        
-        .product-title {
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: #1f2937;
-        }
-        
-        .product-description {
-          margin-top: 0.5rem;
-          color: #4b5563;
-          font-size: 0.875rem;
-        }
-        
-        .product-footer {
-          margin-top: 1rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        
-        .product-price {
-          font-size: 1.156rem;
-          font-weight: 700;
-          color: var(--dl-color-theme-primary2);
-        }
-        
-        .rent-button {
-          background-color: var(--dl-color-theme-primary2);
-          color: white;
-          font-weight: 500;
-          padding: 0.5rem 0.7rem;
-          border-radius: 9999px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          transition: background-color 0.3s ease;
-          border: none;
-          cursor: pointer;
-          width: 40%;           /* full width on mobile */
-          font-size: 1rem;
-          margin-top: 0.5rem;
-          display: block;
-        }
-        
-        /* Tablet: auto width, bigger font */
+/* Desktop breakpoint - 4 columns */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+/*
+ * Product Card
+ * Styles for each individual product card, including hover effects.
+ */
+.product-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.product-image {
+  width: 100%;
+  height: 10rem; /* Reduced height for mobile */
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.p-6 {
+  padding: 1rem; /* Reduced padding for mobile */
+}
+
+.product-title {
+  font-size: 1rem; /* ~16px, adjusted for mobile */
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.product-description {
+  margin-top: 0.25rem; /* Reduced margin */
+  color: #4b5563;
+  font-size: 0.75rem; /* ~12px, adjusted for mobile */
+  line-height: 1.25;
+}
+
+.product-footer {
+  margin-top: 0.75rem; /* Reduced margin */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1rem; /* ~16px, adjusted for mobile */
+  font-weight: 700;
+  color: #ef4444; /* Changed to a more visible red */
+}
+
+.rent-button {
+  background-color: #ef4444; /* Changed to a more visible red */
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  font-size: 0.875rem; /* ~14px */
+  display: none; /* Hidden on mobile */
+}
+
+/* Tablet styles (and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+  .main-heading {
+    font-size: 24px; /* ~40px */
+  }
+  .sub-heading {
+    font-size: 1rem; /* ~16px */
+  }
+  .product-title {
+    font-size: 1.125rem; /* ~18px */
+  }
+  .product-description {
+    font-size: 12px; /* ~12px */
+  }
+  .product-price {
+    font-size: 1.125rem; /* ~18px */
+  }
+  .rent-button {
+    display: inline-block; /* Show on tablet+ */
+    font-size: 1rem;
+    width: auto;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1280px) {
+  .container {
+    padding: 3rem;
+  }
+  .rent-button { 
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}

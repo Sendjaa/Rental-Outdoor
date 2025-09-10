@@ -85,10 +85,6 @@ export default function ProductCatalog({ onAddToCart }) {
 
   return (
     <div className="product-catalog">
-      <div className="catalog-header">
-        <h2>Katalog Produk Rental</h2>
-        <p>Pilih peralatan outdoor terbaik untuk petualangan Anda</p>
-      </div>
 
       <div className="filters">
         <div className="search-box">
@@ -114,6 +110,11 @@ export default function ProductCatalog({ onAddToCart }) {
         </div>
       </div>
 
+      <div className="catalog-header">
+        <h2>Katalog Produk Rental</h2>
+        <p className="catalog-subtitle">Pilih peralatan outdoor terbaik untuk petualangan Anda</p>
+      </div>
+      
       <div className="products-grid">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />

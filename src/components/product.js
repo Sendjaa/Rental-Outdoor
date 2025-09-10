@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import './product.css';
 
+
+const truncateDescription = (text, wordLimit) => {
+  if (!text) return '';
+  const words = text.split(' ');
+  if (words.length <= wordLimit) {
+    return text;
+  }
+  return words.slice(0, wordLimit).join(' ') + '...';
+};
+
 // Komponen Card produk
 const ProductCard = ({ product }) => (
   <div className="product-card">
-  
+    <a key="product.id" href="#">
     <img
       src={product.imageUrl}
       alt={product.name}
@@ -16,11 +26,12 @@ const ProductCard = ({ product }) => (
     />
     <div className="p-6">
       <h3 className="product-title">{product.name}</h3>
-      <p className="product-description">{product.description}</p>
+      <p className="product-description">{truncateDescription(product.description, 5)}</p>
       <div className="product-footer">
         <span className="product-price">{product.price}</span>
       </div>
     </div>
+    </a>
   </div>
 );
 

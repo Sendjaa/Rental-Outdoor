@@ -1,7 +1,6 @@
 .product-catalog {
   margin-bottom: 2rem;
   padding: 2rem;
-
 }
 
 .catalog-header {
@@ -27,8 +26,7 @@
 }
 
 .filters {
-  background: white;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
@@ -54,8 +52,22 @@
 
 .category-filters {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 8px 0;
+  -ms-overflow-style: none;
+  gap: 10px;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.category-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.category-filters::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 .category-btn {
@@ -93,8 +105,22 @@
 }
 
 @media (max-width: 600px) {
+
+  .product-catalog {
+    padding: 0.9rem;
+  }
+
+  .filters {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
   .catalog-header h2 {
-    font-size: 2rem;
+    font-size: 24px;
+  }
+
+  .catalog-header p{
+    font-size: 12px;
   }
 
   .products-grid {
@@ -102,7 +128,26 @@
     /* gap: 1rem; */
   }
 
+  .search-box {
+    margin-bottom: 0.5rem;
+  }
+
+  .search-input {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
   .category-filters {
-    justify-content: center;
+    justify-content: start;
+    gap: 0.3rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+  }
+
+  .category-btn {
+    font-size: 12px;
+    padding: 0.4rem 0.8rem;
   }
 }
