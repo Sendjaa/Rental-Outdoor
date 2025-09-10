@@ -11,9 +11,36 @@ body {
           padding: 1rem;
         }
         
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
           .container {
             padding: 2rem;
+          }
+
+          .main-heading {
+            font-size: 24px;
+          }
+
+          .sub-heading {
+            font-size: 12px;
+            line-height: 75px;
+            letter-spacing: 0.1px;
+            font-weight: 400;
+            margin-top: 10px;
+          }
+
+          .category-btn{  
+            font-size: 14px;
+            padding: 10px 20px;
+          }
+
+          .rent-button {
+            display  : none;
+          }
+          .product-title{
+            font-size: 18px;
+          }
+          .product-price{
+            font-size:18px;
           }
         }
         
@@ -56,9 +83,18 @@ body {
             @media (min-width: 640px) {
           .rent-button {
             width: auto;
-            font-size: 1.1rem;
+            font-size: 16px;
             margin-top: 0;
             display: inline-block;
+          }
+          .product-title  {
+            font-size: 18px;
+          }
+          .product-description{
+           font-size: 12px;
+          }
+          .product-price{
+            font-size: 18px;
           }
         }
         
@@ -124,7 +160,7 @@ body {
         .product-price {
           font-size: 1.156rem;
           font-weight: 700;
-          color: var(  --dl-color-theme-primary2);
+          color: var(--dl-color-theme-primary2);
         }
         
         .rent-button {
@@ -137,7 +173,7 @@ body {
           transition: background-color 0.3s ease;
           border: none;
           cursor: pointer;
-          width: 50%;           /* full width on mobile */
+          width: 40%;           /* full width on mobile */
           font-size: 1rem;
           margin-top: 0.5rem;
           display: block;

@@ -15,7 +15,7 @@ const Home = (props) => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Rental Outdoor | </title>
+        <title>Rental Outdoor | Beranda</title>
         <meta property="og:title" content="Rental Outdoor" />
       </Helmet>
 

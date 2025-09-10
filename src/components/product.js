@@ -4,6 +4,7 @@ import './product.css';
 // Komponen Card produk
 const ProductCard = ({ product }) => (
   <div className="product-card">
+  
     <img
       src={product.imageUrl}
       alt={product.name}
@@ -18,9 +19,6 @@ const ProductCard = ({ product }) => (
       <p className="product-description">{product.description}</p>
       <div className="product-footer">
         <span className="product-price">{product.price}</span>
-        <button className="rent-button">
-          Sewa
-        </button>
       </div>
     </div>
   </div>
@@ -364,6 +362,7 @@ const Product = () => {
         <p className="sub-heading">
           Temukan perlengkapan petualangan outdoor terbaik kami.
         </p>
+        
         {/* Kategori */}
         <div style={{ margin: '2rem 0 1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           {categories.map(cat => (

@@ -24,7 +24,7 @@ const Navbar8 = (props) => {
             >
               {props.link1 ?? (
                 <Fragment>
-                  <span className="navbar8-text18">Home</span>
+                  <span className="navbar8-text18">Beranda</span>
                 </Fragment>
               )}
             </a>
@@ -105,15 +105,16 @@ const Navbar8 = (props) => {
         <div data-thq="thq-mobile-menu" className="navbar8-mobile-menu">
           <div className="navbar8-nav">
             <div className="navbar8-top">
-              <img
+              {/* <img
                 alt={props.logoAlt}
                 src={props.logoSrc}
                 className="navbar8-logo"
-              />
+              /> */}
+              <a href="/" className="navbar8-link-logo"><b>Rental</b>Outdoor</a>
               <div data-thq="thq-close-menu" className="navbar8-close-menu">
-                <svg viewBox="0 0 1024 1024" className="navbar8-icon16">
+                {/* <svg viewBox="0 0 1024 1024" className="navbar8-icon16">
                   <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
-                </svg>
+                </svg> */}
               </div>
             </div>
             <nav className="navbar8-links2">
@@ -123,14 +124,14 @@ const Navbar8 = (props) => {
               >
                 {props.link1 ?? (
                   <Fragment>
-                    <span className="navbar8-text18">Link 1</span>
+                    <span className="navbar8-text18">Beranda</span>
                   </Fragment>
                 )}
               </a>
               <a href={props.link2Url} className="thq-link thq-body-small">
                 {props.link2 ?? (
                   <Fragment>
-                    <span className="navbar8-text16">Link 2</span>
+                    <span className="navbar8-text16">Keunggulan</span>
                   </Fragment>
                 )}
               </a>
@@ -140,7 +141,7 @@ const Navbar8 = (props) => {
               >
                 {props.link3 ?? (
                   <Fragment>
-                    <span className="navbar8-text24">Link 3</span>
+                    <span className="navbar8-text24">Produk Rental</span>
                   </Fragment>
                 )}
               </a>
@@ -152,7 +153,7 @@ const Navbar8 = (props) => {
                   <span className="thq-link thq-body-small">
                     {props.link4 ?? (
                       <Fragment>
-                        <span className="navbar8-text21">Link 4</span>
+                        <span className="navbar8-text21">Lainnya</span>
                       </Fragment>
                     )}
                   </span>
@@ -296,7 +297,7 @@ const Navbar8 = (props) => {
                 <span>
                   {props.action1 ?? (
                     <Fragment>
-                      <span className="navbar8-text15">Main Action</span>
+                      <span className="navbar8-text15">Rental Sekarang</span>
                     </Fragment>
                   )}
                 </span>
@@ -305,7 +306,7 @@ const Navbar8 = (props) => {
                 <span>
                   {props.action2 ?? (
                     <Fragment>
-                      <span className="navbar8-text27">Secondary Action</span>
+                      <span className="navbar8-text27">Chat Kami via Whatsapp</span>
                     </Fragment>
                   )}
                 </span>
