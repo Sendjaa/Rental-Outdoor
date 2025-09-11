@@ -89,4 +89,21 @@
   .cta26-button {
     flex: 1;
   }
+  .cta26-text4{
+    font-size: 30px;
+  }
+  .cta26-text5{
+    font-size: 16px;
+  }
+  .cta26-container2 {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  padding-bottom: 50px;
+}
+.cta26-actions {
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
 }
