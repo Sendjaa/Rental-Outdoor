@@ -47,6 +47,20 @@ const CTA26 = (props) => {
                     )}
                   </span>
                 </button>
+                <button
+                  type="button"
+                  className="thq-button-filled cta26-button"
+                >
+                  <span>
+                    {props.action1 ?? (
+                      <Fragment>
+                        <span className="cta26-text6">
+                          Rental Sekarang
+                        </span>
+                      </Fragment>
+                    )}
+                  </span>
+                </button>
               </div>
             </div>
           </div>

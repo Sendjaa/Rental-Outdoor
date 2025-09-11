@@ -192,15 +192,27 @@
     margin-bottom: var(--dl-layout-space-oneandhalfunits);
   }
   .testimonial17-card1 {
-    width: 50%;
+    width: 100%;
   }
   .testimonial17-card2 {
-    width: 50%;
+    width: 100%;
   }
   .testimonial17-card3 {
-    width: 50%;
+    width: 100%;
   }
   .testimonial17-card4 {
-    width: 50%;
+    width: 100%;
+  }
+
+  .testimonial17-text25,.testimonial17-text24,.testimonial17-text26,.testimonial17-text28,.testimonial17-text29,.testimonial17-text30,
+  .testimonial17-text32,.testimonial17-text33,.testimonial17-text34,.testimonial17-text35,.testimonial17-text36,
+  .testimonial17-text37{
+    font-size: 12px;
+  }
+  .name1,.name2,.name3,.name4{
+    font-size: 14px;
+  }
+  .testimonial17-title{
+    font-size: 24px;
   }
 }

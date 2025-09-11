@@ -12,7 +12,7 @@ const Testimonial17 = (props) => {
           <h2 className="thq-heading-2">
             {props.heading1 ?? (
               <Fragment>
-                <span className="testimonial17-text35">Testimoni Pelanggan</span>
+                <span className="testimonial17-title">Testimoni Pelanggan</span>
               </Fragment>
             )}
           </h2>
@@ -43,7 +43,7 @@ const Testimonial17 = (props) => {
                     <strong className="thq-body-large">
                       {props.author1Name ?? (
                         <Fragment>
-                          <span className="testimonial17-text26">Budi Santoso</span>
+                          <span className="name3">Budi Santoso</span>
                         </Fragment>
                       )}
                     </strong>
@@ -86,7 +86,7 @@ const Testimonial17 = (props) => {
                     <strong className="thq-body-large">
                       {props.author2Name ?? (
                         <Fragment>
-                          <span className="testimonial17-text29">
+                          <span className="name2">
                             Siti Rahmawati
                           </span>
                         </Fragment>
@@ -131,7 +131,7 @@ const Testimonial17 = (props) => {
                     <strong className="thq-body-large">
                       {props.author3Name ?? (
                         <Fragment>
-                          <span className="testimonial17-text27">
+                          <span className="name1">
                             Andi Pratama
                           </span>
                         </Fragment>
@@ -176,7 +176,7 @@ const Testimonial17 = (props) => {
                     <strong className="thq-body-large">
                       {props.author4Name ?? (
                         <Fragment>
-                          <span className="testimonial17-text31">
+                          <span className="name4">
                             Dewi Lestari
                           </span>
                         </Fragment>
