@@ -32,7 +32,7 @@ const Home = (props) => {
       {/* end feature24 */}
 
       {/* product */}
-      <Product/>
+      {/* <Product/> */}
       {/* end product */}
 
       {/* pricing  */}

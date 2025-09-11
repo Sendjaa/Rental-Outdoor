@@ -74,6 +74,7 @@ const Pricing14 = (props) => {
         </div>
         {isMonthly === true && (
           <div className="pricing14-container1">
+            
             <div className="pricing14-column1 thq-card">
               <div className="pricing14-price10">
                 <div className="pricing14-price11">
@@ -152,6 +153,7 @@ const Pricing14 = (props) => {
                 </span>
               </button>
             </div>
+
             <div className="pricing14-column2 thq-card">
               <div className="pricing14-price12">
                 <div className="pricing14-price13">

@@ -57,8 +57,8 @@
 .pricing14-button10 {
   gap: var(--dl-layout-space-halfunit);
   color: var(--dl-color-theme-neutral-light);
-  width: 120px;
-  height: 60px;
+  width: 80px;
+  height: 40px;
   border-top-left-radius: var(--dl-layout-radius-buttonradius);
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--dl-layout-radius-buttonradius);
@@ -67,8 +67,8 @@
  
 .pricing14-button11 {
   gap: var(--dl-layout-space-halfunit);
-  width: 120px;
-  height: 60px;
+  width: 80px;
+  height: 40px;
   border-style: solid;
   border-top-left-radius: var(--dl-layout-radius-buttonradius);
   border-top-right-radius: 0;
@@ -79,8 +79,8 @@
 .pricing14-button12 {
   gap: var(--dl-layout-space-halfunit);
   color: var(--dl-color-theme-neutral-light);
-  width: 120px;
-  height: 60px;
+  width: 80px;
+  height: 40px;
   border-top-left-radius: 0;
   border-top-right-radius: var(--dl-layout-radius-buttonradius);
   border-bottom-left-radius: 0;
@@ -89,8 +89,8 @@
  
 .pricing14-button13 {
   gap: var(--dl-layout-space-halfunit);
-  width: 120px;
-  height: 60px;
+  width: 80px;
+  height: 40px;
   border-style: solid;
   border-top-left-radius: 0;
   border-top-right-radius: var(--dl-layout-radius-buttonradius);
@@ -852,9 +852,62 @@
     width: 100%;
   }
 }
+
  
 @media(max-width: 479px) {
   .pricing14-max-width {
     gap: var(--dl-layout-space-oneandhalfunits);
   }
+
+  .pricing14-text178{
+    font-weight: -10px;
+    font-size: 14px;
+    margin-bottom: -20px;
+  }
+  .pricing14-text101{
+    margin-top: -10px;
+  }
+  .pricing14-text180{
+    font-size: 24px;
+    margin-top: -50px;
+  }
+  .pricing14-text102{
+    margin-top: -10px;
+  }
+  .pricing14-text202{
+    font-size: 12px;
+  }
+   
+.pricing14-button11 {
+  gap: var(--dl-layout-space-halfunit);
+  width: 80px;
+  height: 40px;
+  border-style: solid;
+  border-top-left-radius: var(--dl-layout-radius-buttonradius);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--dl-layout-radius-buttonradius);
+  border-bottom-right-radius: 0;
+}
+ 
+.pricing14-button12 {
+  gap: var(--dl-layout-space-halfunit);
+  color: var(--dl-color-theme-neutral-light);
+  width: 80px;
+  height: 40px;
+  border-top-left-radius: 0;
+  border-top-right-radius: var(--dl-layout-radius-buttonradius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: var(--dl-layout-radius-buttonradius);
+}
+ 
+.pricing14-button13 {
+  gap: var(--dl-layout-space-halfunit);
+  width: 80px;
+  height: 40px;
+  border-style: solid;
+  border-top-left-radius: 0;
+  border-top-right-radius: var(--dl-layout-radius-buttonradius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: var(--dl-layout-radius-buttonradius);
+}
 }

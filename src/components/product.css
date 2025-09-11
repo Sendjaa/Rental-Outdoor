@@ -138,6 +138,20 @@ body {
   display: none; /* Hidden on mobile */
 }
 
+/* mobile styles */
+@media (max-width: 600px) {
+  .rent-button {
+    display: none; /* Ensure hidden on mobile */
+  }
+
+  .main-heading {
+    font-size: 1.875rem; /* ~30px */
+  }
+}
+/* end mobile styles */
+
+
+
 /* Tablet styles (and up) */
 @media (min-width: 768px) {
   .container {

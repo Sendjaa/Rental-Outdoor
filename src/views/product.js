@@ -40,9 +40,6 @@ export default function Product() {
           </div>
         )
     }
- 
-
-
      const handleUpdateItem = (id, newQuantity, newDays) => {
          if (newQuantity < 1) newQuantity = 1
          if (newDays < 1) newDays = 1
@@ -53,7 +50,6 @@ export default function Product() {
             )
          )
      }
-
      const handleRemoveItem = (id) => {
          setCartItems((prevItems) => prevItems.filter((item) => item.id !== id))
      }

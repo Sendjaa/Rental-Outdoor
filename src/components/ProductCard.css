@@ -55,7 +55,7 @@
   color: #666;
   font-size: 14px;
   margin-bottom: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .price-section {
@@ -176,13 +176,23 @@
     margin-bottom: 0;
   }
 
+  .product-card img{
+    width:100%;
+    height: 50%;
+  }
+
   .product-info {
     padding: 0.5rem;  
   }
   
   .product-name {
-    font-size:16px;
+    font-size: 12px;
+    font-weight: lighter;
   }
+  .product-description{
+    font-size: 10px;
+  }
+
   .price {
     font-size: 1.2rem;
   }
@@ -233,5 +243,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .product-name{
+    font-size: 12px;
+  }
+
+  .product-description{
+    font-size: 10px;
   }
 }
