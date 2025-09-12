@@ -5,7 +5,7 @@
 
 .catalog-header {
   font-size: 48px;
-  font-family: STIX Two Text;
+  font-family: STIX Two Text, serif;
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
@@ -13,14 +13,14 @@
 
 .catalog-header h2 {
   font-size: 35px;
-  font-family: STIX Two Text;
+  font-family: STIX Two Text, serif;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .catalog-header p {
   font-size: 16px;
-  font-family: Noto Sans;
+  font-family: Noto Sans, sans-serif;
   line-height: 1.5;
   padding-bottom: 1rem;
 }
@@ -30,6 +30,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  background: #fff;
 }
 
 .search-box {
@@ -47,7 +48,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: var(--dl-color-theme-primary1)
+  border-color: var(--dl-color-theme-primary1);
 }
 
 .category-filters {
@@ -55,7 +56,6 @@
   overflow-x: auto;
   white-space: nowrap;
   padding: 8px 0;
-  -ms-overflow-style: none;
   gap: 10px;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
@@ -63,11 +63,6 @@
 
 .category-filters::-webkit-scrollbar {
   display: none;
-}
-
-.category-filters::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
 }
 
 .category-btn {
@@ -93,7 +88,7 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(6, 1fr); /* Desktop: 6 card */
   gap: 1rem;
 }
 
@@ -104,39 +99,84 @@
   font-size: 1.1rem;
 }
 
-@media (max-width: 600px) {
+/* Tambahkan aturan ini untuk memperbaiki ukuran gambar produk */
+.product-card img {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;      /* Atur tinggi gambar agar proporsional */
+  object-fit: cover;  /* Gambar akan crop agar tidak melar */
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 0.7rem;
+}
 
+/* Responsive: gambar lebih kecil di mobile */
+@media (max-width: 600px) {
+  .product-card img {
+    height: 120px;
+    border-radius: 8px;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .product-catalog {
+    padding: 1.2rem;
+  }
+  .catalog-header {
+    font-size: 36px;
+  }
+  .catalog-header h2 {
+    font-size: 28px;
+  }
+  .catalog-header p {
+    font-size: 14px;
+  }
+  .filters {
+    padding: 0.8rem;
+  }
+  .search-input {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  .category-filters {
+    padding: 6px 0;
+  }
+  .category-btn {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr); /* Tablet: 4 card */
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
   .product-catalog {
     padding: 0.9rem;
   }
-
   .filters {
     padding: 1rem;
     margin-bottom: 1rem;
   }
-
   .catalog-header h2 {
     font-size: 24px;
   }
-
-  .catalog-header p{
+  .catalog-header p {
     font-size: 12px;
   }
-
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* gap: 1rem; */
+    padding: 0.9rem ;
+    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 card */
   }
-
   .search-box {
     margin-bottom: 0.5rem;
   }
-
   .search-input {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
   }
-
   .category-filters {
     justify-content: start;
     gap: 0.3rem;
@@ -145,7 +185,6 @@
     scrollbar-width: thin;
     scrollbar-color: #ccc transparent;
   }
-
   .category-btn {
     font-size: 12px;
     padding: 0.4rem 0.8rem;

@@ -33,9 +33,11 @@ const CTA26 = (props) => {
                 </p>
               </div>
               <div className="cta26-actions">
-                <button
+                <a 
+                  href='https://wa.me/6281234567890'
                   type="button"
                   className="thq-button-filled cta26-button"
+                  target='_blank'
                 >
                   <span>
                     {props.action1 ?? (
@@ -46,13 +48,14 @@ const CTA26 = (props) => {
                       </Fragment>
                     )}
                   </span>
-                </button>
-                <button
+                </a>
+                <a
+                  href='/products'
                   type="button"
                   className="thq-button-filled cta26-button"
                 >
                   <span>
-                    {props.action1 ?? (
+                    {props.action2 ?? (
                       <Fragment>
                         <span className="cta26-text6">
                           Rental Sekarang
@@ -60,7 +63,7 @@ const CTA26 = (props) => {
                       </Fragment>
                     )}
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -74,12 +77,14 @@ CTA26.defaultProps = {
   heading1: undefined,
   content1: undefined,
   action1: undefined,
+  action1: undefined,
 }
 
 CTA26.propTypes = {
   heading1: PropTypes.element,
   content1: PropTypes.element,
   action1: PropTypes.element,
+  action2: PropTypes.element,
 }
 
 export default CTA26

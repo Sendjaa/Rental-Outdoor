@@ -3,12 +3,9 @@
 import { useState } from "react"
 import products from "../data/products"
 import "./productDetail.css"
+import Cart from "./Cart"
 
-/**
- * @param {{ productId?: string }} props
- */
-
-export default function Detail({ productId } = {}) {
+export default function Detail({ productId, onAddToCart, onClose } = {}) {
   const id = productId || "1"
   const product = products.find((p) => p.id.toString() === id)
 
@@ -16,23 +13,56 @@ export default function Detail({ productId } = {}) {
   const [isBooking, setIsBooking] = useState(false)
   const [selectedQuantity, setSelectedQuantity] = useState(1)
   const [selectedDuration, setSelectedDuration] = useState(1)
+  const [showCart, setShowCart] = useState(false)
+  const [cartItems, setCartItems] = useState([])
 
   if (!product) return <h2 className="not-found">Produk tidak ditemukan</h2>
 
+  const handleclose = () => {
+    if (typeof onClose === "function") {
+      onClose()
+    } else {
+      window.history.back()
+    }
+  }
+
   const handleAddToCart = async () => {
     setIsAddingToCart(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log("Produk ditambahkan ke keranjang:", product.name)
-    alert(`${product.name} berhasil ditambahkan ke keranjang!`)
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    const cartItem = {
+      ...product,
+      quantity: selectedQuantity,
+      days: selectedDuration, // Ganti dari 'duration' ke 'days' agar konsisten
+      total: product.price * selectedQuantity * selectedDuration
+    }
+    setCartItems([cartItem])
+    setShowCart(true)
+    if (typeof onAddToCart === "function") {
+      onAddToCart(cartItem)
+    }
     setIsAddingToCart(false)
   }
 
-  const handleBooking = async () => {
-    setIsBooking(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    console.log("Booking produk:", product.name)
-    alert(`Booking ${product.name} berhasil! Tim kami akan menghubungi Anda segera.`)
-    setIsBooking(false)
+  // Pastikan handleUpdateItem juga konsisten menggunakan 'days'
+  const handleUpdateItem = (id, quantity, days) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, quantity), days: Math.max(1, days), total: item.price * Math.max(1, quantity) * Math.max(1, days) }
+          : item
+      )
+    )
+  }
+
+  const handleRemoveItem = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id))
+    if (cartItems.length <= 1) setShowCart(false)
+  }
+
+  const handleBooking = () => {
+    alert("Booking berhasil! Tim kami akan menghubungi Anda segera.")
+    setShowCart(false)
+    setCartItems([])
   }
 
   const totalPrice = product.price * selectedQuantity * selectedDuration
@@ -41,6 +71,7 @@ export default function Detail({ productId } = {}) {
     <div className="ecommerce-container">
       <nav className="breadcrumb">
         <span>Beranda</span> / <span>Produk</span> / <span className="current">{product.name}</span>
+        <button className="close-button" onClick={handleclose}>×</button>
       </nav>
 
       <div className="product-layout">
@@ -169,6 +200,18 @@ export default function Detail({ productId } = {}) {
           </div>
         </div>
       </div>
+
+      {/* Tampilkan Cart jika showCart true */}
+      {showCart && (
+        <Cart
+          items={cartItems}
+          onUpdateItem={handleUpdateItem}
+          onRemoveItem={handleRemoveItem}
+          totalPrice={cartItems.reduce((sum, item) => sum + (item.price * item.quantity * item.days), 0)}
+          onClose={() => setShowCart(false)}
+          onBooking={handleBooking}
+        />
+      )}
     </div>
   )
 }

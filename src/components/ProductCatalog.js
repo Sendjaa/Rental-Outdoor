@@ -45,7 +45,7 @@ export default function ProductCatalog({ onAddToCart, onSelectProduct }) {
         </div>
       </div>
 
-      <div className="catalog-header">
+      <div className="catalog-header" >
         <h2>Katalog Produk Rental</h2>
         <p className="catalog-subtitle">Pilih peralatan outdoor terbaik untuk petualangan Anda</p>
       </div>

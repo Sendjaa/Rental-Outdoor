@@ -8,7 +8,6 @@ import Cart from "../components/Cart"
 import BookingForm from "../components/BookingForm"
 import "./product.css"
 import Navbar8 from "../components/navbar8"
-import ProductCard from "../components/ProductCard"
 import Detail from "../components/productDetail"
 
 export default function Product() { 

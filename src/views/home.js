@@ -5,13 +5,12 @@ import Hero17 from '../components/hero17'
 import Features24 from '../components/features24'
 import CTA26 from '../components/cta26'
 import Pricing14 from '../components/pricing14'
-import Steps2 from '../components/steps2'
 import Testimonial17 from '../components/testimonial17'
 import Footer4 from '../components/footer4'
-import Product from '../components/product'
+// import Product from '../components/product'
 import './home.css'
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div className="home-container">
       <Helmet>
@@ -38,10 +37,6 @@ const Home = (props) => {
       {/* pricing  */}
       <Pricing14/>
       {/* end pricing  */}
-
-      {/* steps  */}
-      {/* <Steps2/> */}
-      {/* end steps  */}
 
       {/* testimonial  */}
       <Testimonial17/>
