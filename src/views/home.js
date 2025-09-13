@@ -7,7 +7,6 @@ import CTA26 from '../components/cta26'
 import Pricing14 from '../components/pricing14'
 import Testimonial17 from '../components/testimonial17'
 import Footer4 from '../components/footer4'
-// import Product from '../components/product'
 import './home.css'
 
 const Home = () => {

@@ -69,9 +69,11 @@ export default function Detail({ productId, onAddToCart, onClose } = {}) {
 
   return (
     <div className="ecommerce-container">
-      <nav className="breadcrumb">
-        <span>Beranda</span> / <span>Produk</span> / <span className="current">{product.name}</span>
-        <button className="close-button" onClick={handleclose}>×</button>
+      <nav className="breadcrumb" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+        <button className="close-btn" onClick={handleclose} style={{ marginLeft: "16px" }}><i class="bi bi-arrow-left-circle"></i></button>
+          <span>Beranda</span> / <span>Produk</span> / <span className="current">{product.name}</span>
+        </div>
       </nav>
 
       <div className="product-layout">
@@ -180,6 +182,12 @@ export default function Detail({ productId, onAddToCart, onClose } = {}) {
       </div>
 
       <div className="product-specs">
+{/*         
+          <div className="description-box">
+            <h3 className="description-title">Deskripsi</h3>
+            <p className="description-graf">{product.description}</p>
+          </div> */}
+
         <h3>Spesifikasi Produk</h3>
         <div className="specs-grid">
           <div className="spec-item">
